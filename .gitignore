@@ -1,0 +1,31 @@
+
+## Laravel
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+
+## local config
+/app/config/local/database.php
+/app/config/database.php
+
+## Sublime stuff
+*.sublime-project
+*.sublime-workspace
+
+## Emacs
+*~
+
+## PhpStorm
+*.iml
+.idea/
