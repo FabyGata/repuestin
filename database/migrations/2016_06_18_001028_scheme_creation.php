@@ -16,7 +16,7 @@ class SchemeCreation extends Migration
         /*
          * Car table.
          */
-        Schema::create('car', function(Blueprint $table){
+        Schema::create('cars', function(Blueprint $table){
             $table->increments('id');
             $table->string('brand');
             $table->string('model');
@@ -27,7 +27,7 @@ class SchemeCreation extends Migration
         /*
          * Product table.
          */
-        Schema::create('product', function(Blueprint $table){
+        Schema::create('products', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
             $table->integer('price');
@@ -49,11 +49,11 @@ class SchemeCreation extends Migration
             $table->integer('products_list_id')->unsigned();
             $table->foreign('products_list_id')->references('id')->on('products_list');
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('product');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
 
-        Schema::create('sell', function(Blueprint $table){
+        Schema::create('sales', function(Blueprint $table){
             $table->increments('id');
             $table->integer('products_list_id')->unsigned();
             $table->foreign('products_list_id')->references('id')->on('products_list');
@@ -68,7 +68,7 @@ class SchemeCreation extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('car_id')->unsigned();
-            $table->foreign('car_id')->references('id')->on('car');
+            $table->foreign('car_id')->references('id')->on('cars');
             $table->integer('products_list_id')->unsigned();
             $table->foreign('products_list_id')->references('id')->on('products_list');
             $table->string('client_name');
@@ -88,10 +88,10 @@ class SchemeCreation extends Migration
     public function down()
     {
         Schema::drop('repairs');
-        Schema::drop('sell');
+        Schema::drop('sales');
         Schema::drop('product_products_list');
         Schema::drop('products_list');
-        Schema::drop('product');
-        Schema::drop('car');
+        Schema::drop('products');
+        Schema::drop('cars');
     }
 }

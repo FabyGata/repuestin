@@ -18,3 +18,13 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('car', 'CarsController');
+
+Route::resource('product', 'ProductsController');
+
+Route::resource('sale', 'SalesController');
+
+Route::resource('repair', 'RepairsController');
+
+Route::resource('products_list', 'ProductsListController');
