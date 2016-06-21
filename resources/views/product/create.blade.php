@@ -1,4 +1,3 @@
-<!-- resources/views/tasks.blade.php -->
 
 @extends('layouts.app')
 
@@ -11,7 +10,7 @@
 
 
     <!-- New Task Form -->
-        <form action="{{ url('product/store') }}" method="POST" class="form-horizontal">
+        <form action="{{ route('product.store') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
 
         <!-- Task Name -->

@@ -16,7 +16,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+//        return view('product.index', ['products' => Product::all()]);
+        return view('product.index', [ 'products' => Product::orderBy('created_at', 'desc')->get() ]);
     }
 
     /**
@@ -37,10 +38,8 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product;
-        $product->name = Input::get('name');
-        $product->save();
-        return redirect('/');
+        Product::create($request->all());
+        return $this->index();
     }
 
     /**
