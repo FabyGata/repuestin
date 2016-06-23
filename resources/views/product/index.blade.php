@@ -46,11 +46,9 @@
 
 <div class="form-group">
     <div class="col-sm-6">
-        <a href="product/create">
-            <button type="submit" class="btn btn-default">
-                <i class="fa fa-plus"></i> Añadir Producto Nuevo
-            </button>
-        </a>
+        <button type="submit" class="btn btn-default" href="">
+            <i class="fa fa-plus"></i> Añadir Producto Nuevo
+        </button>
     </div>
 </div>
 

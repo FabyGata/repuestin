@@ -16,7 +16,6 @@ class ProductsController extends Controller
      */
     public function index()
     {
-//        return view('product.index', ['products' => Product::all()]);
         return view('product.index', [ 'products' => Product::orderBy('created_at', 'desc')->get() ]);
     }
 
