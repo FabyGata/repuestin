@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Car;
+use App\ProductProductsList;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class CarsController extends Controller
+class ProductProductsListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CarsController extends Controller
      */
     public function index()
     {
-        return view ('car.index',['cars' => Car::orderby('created_at','desc')->get()]);
+        return view('product_products_list.index', ['product_products_list' => ProductProductsList::all()]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        return view('car.create');
+        return view('product_products_list.create');
     }
 
     /**
@@ -37,8 +37,13 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        Car::create($request->all());
+        //ProductProductsList::create();
+        $productProductsList = new ProductProductsList();
+        $productProductsList->product_id = 1;
+        $productProductsList->products_list_id = 1;
+        $productProductsList->save();
         return $this->index();
+
     }
 
     /**

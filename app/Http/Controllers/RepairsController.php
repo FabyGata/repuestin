@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repair;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class RepairsController extends Controller
      */
     public function index()
     {
-        //
+        return view('repair.index' , ['repairs' => Repair::all()]);
     }
 
     /**
@@ -25,7 +26,7 @@ class RepairsController extends Controller
      */
     public function create()
     {
-        //
+        return view('repair.create');
     }
 
     /**
@@ -36,7 +37,17 @@ class RepairsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $repair=new Repair();
+        $repair->client_name =$request->client_name;
+        $repair->client_nit=$request->client_nit;
+        $repair->price =$request->price;
+        $repair->total_price =$request->total_price;
+        $repair->user_id = 1;
+        $repair->car_id=1;
+        $repair->products_list_id = 1;
+        $repair->save();
+        return $this->index();
+        
     }
 
     /**

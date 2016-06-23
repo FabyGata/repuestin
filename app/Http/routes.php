@@ -28,3 +28,5 @@ Route::resource('sale', 'SalesController');
 Route::resource('repair', 'RepairsController');
 
 Route::resource('products_list', 'ProductsListController');
+
+Route::resource('product_products_list', 'ProductProductsListController');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductsList;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class ProductsListController extends Controller
      */
     public function index()
     {
-        //
+        return view('products_list.index', ['products_list' => ProductsList::all()]);
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductsListController extends Controller
      */
     public function create()
     {
-        //
+        return view('products_list.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class ProductsListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        ProductsList::create();
+        return $this->index();
     }
 
     /**
