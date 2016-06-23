@@ -54,6 +54,26 @@
                     <li><a href="{{ url('/product') }}">Productos</a></li>
                 </ul>
 
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/car') }}">Autos</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/products_list') }}">Lista de productos</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/product_products_list') }}">Lista de products list :v</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/sales') }}">Ventas</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/repair') }}">Reparaciones</a></li>
+                </ul>
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
