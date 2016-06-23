@@ -1,86 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Autopartes Repuestín</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    <link rel="stylesheet" href="{!! asset('site/css/reset.css') !!}" type="text/css" media="all">
+    <link rel="stylesheet" href="{!! asset('site/css/layout.css') !!}" type="text/css" media="all">
+    <link rel="stylesheet" href="{!! asset('site/css/style.css') !!}" type="text/css" media="all">
+    <script type="text/javascript" src="{!! asset('site/js/jquery-1.6.js') !!}" ></script>
+    <script type="text/javascript" src="{!! asset('site/js/cufon-yui.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/cufon-replace.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/Vegur_300.font.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/PT_Sans_700.font.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/PT_Sans_400.font.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/tms-0.3.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/tms_presets.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/jquery.easing.1.3.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('site/js/atooltip.jquery.js') !!}"></script>
+    <!--[if lt IE 9] -->
+    <script type="text/javascript" src="{!! asset('site/js/html5.js') !!}"></script>
+    <link rel="stylesheet" href="{!! asset('site/css/ie.css') !!}" type="text/css" media="all">
+    <!-- [endif]-->
+    <!--[if lt IE 7] -->
+    {{--<div style=' clear: both; text-align:center; position: relative;'>--}}
+        {{--<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>--}}
+    {{--</div>--}}
+    <!-- [endif]-->
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Repuestín
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Inicio</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/product') }}">Productos</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Ingresar</a></li>
-                        <li><a href="{{ url('/register') }}">Registrarse</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Salir</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body id="page1">
 
     @yield('content')
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <div class="main">
+        <!--content end-->
+        <!--footer -->
+        <footer>
+            <ul id="icons">
+                <li class="first">Siguenos:</li>
+                <li><a href="https://www.facebook.com/cristian.salinas.7921?fref=ts" class="normaltip" title="Facebook"><img src="{!! asset('site/images/icon1.jpg') !!}" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="Twitter"><img src="{!! asset('site/images/icon2.jpg') !!}" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="Picasa"><img src="{!! asset('site/images/icon3.jpg') !!}" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="YouTube"><img src="{!! asset('site/images/icon4.jpg') !!}" alt=""></a></li>
+            </ul>
+            CAVAR &copy; 2016 <br>Website Template by <a href="http://www.templatemonster.com/" target="_blank">TemplateMonster.com</a><br>
+            <!-- {%FOOTER_LINK} -->
+        </footer>
+        <!--footer end-->
+    </div>
+
+    <script type="text/javascript"> Cufon.now(); </script>
+    <script>
+        $(window).load(function(){
+            $('#slider')._TMS({
+                banners:true,
+                waitBannerAnimation:false,
+                preset:'diagonalFade',
+                easing:'easeOutQuad',
+                pagination:true,
+                duration:400,
+                slideshow:8000,
+                bannerShow:function(banner){
+                    banner.css({marginRight:-500}).stop().animate({marginRight:0}, 600)
+                },
+                bannerHide:function(banner){
+                    banner.stop().animate({marginRight:-500}, 600)
+                }
+            })
+        })
+    </script>
+
 </body>
 </html>
