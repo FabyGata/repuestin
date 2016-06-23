@@ -26,7 +26,7 @@
     {{--</div>--}}
     <!-- [endif]-->
 </head>
-<body id="page1">
+{{--<body id="page1">--}}
 
     @yield('content')
 

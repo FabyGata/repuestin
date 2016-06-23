@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <body id="page1">
+
     <div class="main">
         <!--header -->
         <header>
@@ -32,8 +34,8 @@
                     <li class="active"><a href="{{ url('/') }}"><span>Inicio</span></a></li>
                     <li><a href="{{ url('/product') }}"><span>Productos</span></a></li>
                     <li><a href="{{ url('/car') }}"><span>Autos</span></a></li>
-                    <li><a href="{{ url('/products_list') }}"><span>Lista de Productos</span></a></li>
-                    <li><a href="{{ url('/product_products_list') }}"><span>Producto Lista de Productos :v</span></a></li>
+                    {{--<li><a href="{{ url('/products_list') }}"><span>Lista de Productos</span></a></li>--}}
+                    {{--<li><a href="{{ url('/product_products_list') }}"><span>Producto Lista de Productos :v</span></a></li>--}}
                     <li><a href="{{ url('/sale') }}"><span>Ventas</span></a></li>
                     <li><a href="{{ url('/repair') }}"><span>Reparaciones</span></a></li>
                 </ul>
