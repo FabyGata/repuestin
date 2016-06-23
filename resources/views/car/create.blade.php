@@ -3,53 +3,72 @@
 
 @section('content')
 
-    <!-- Bootstrap Boilerplate... -->
+    <body id="page2">
 
-    <div class="panel-body">
-        <!-- Display Validation Errors -->
+    <div class="main">
+        <!--header -->
+        <header>
+            <div class="wrapper">
+                <h1><a href="/" id="logo">Repuestín</a></h1>
+                <h1 style="float: right;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Ingresar</a></li>
+                            <li><a href="{{ url('/register') }}">Registrarse</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Salir</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+                </h1>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="{{ url('/') }}"><span>Inicio</span></a></li>
+                    <li><a href="{{ url('/product') }}"><span>Productos</span></a></li>
+                    <li class="active"><a href="{{ url('/car') }}"><span>Auto</span></a></li>
+                    <li><a href="{{ url('/sale') }}"><span>Ventas</span></a></li>
+                    <li><a href="{{ url('/repair') }}"><span>Reparaciones</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
+            <div class="wrapper">
+                <h2>Contact Form</h2>
+                <form id="ContactForm" action="{{ route('car.store') }}" method="POST" class="form-horizontal">
+                    {{ csrf_field() }}
+                    <div>
+                        <div  class="wrapper">
+                            <span>Marca:</span>
+                            <div class="bg"><input type="text" class="input" name="brand"></div>
+                        </div>
+                        <div  class="wrapper">
+                            <span>Modelo:</span>
+                            <div class="bg"><input type="text" class="input" name="model" ></div>
+                        </div>
+                        <div  class="wrapper">
+                            <span>Color:</span>
+                            <div class="bg"><input type="text" class="input" name="color" ></div>
+                        </div>
+
+                        <button type="submit" class="button1">
+                            Crear Auto
+                        </button>
+                    </div>
+                </form>
 
 
-        <!-- New Task Form -->
-        <form action="{{ route('car.store') }}" method="POST" class="form-horizontal">
-        {{ csrf_field() }}  <!-- clave-->
-
-        <!-- Task Name -->
-            <div class="form-group">
-                <label for="brand" class="col-sm-3 control-label">Marca</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="brand" id="brand-car" class="form-control">
-                </div>
 
             </div>
+        </article>
 
-            <div class="form-group">
-                <label for="model" class="col-sm-3 control-label">Modelo</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="model" id="car-model" class="form-control">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="color" class="col-sm-3 control-label">Color</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="color" id="car-color" class="form-control">
-                </div>
-            </div>
-
-
-            <!-- Add Task Button -->
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Añadir Auto
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- TODO: Current Tasks -->
 @endsection

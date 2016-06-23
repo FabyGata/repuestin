@@ -42,6 +42,10 @@ class SalesController extends Controller
         $sale->client_name = $request->client_name;
         $sale->client_nit = $request->client_nit;
         $sale->total_price = $request->total_price;
+        //@foreach($products as $product)
+        //   $product->products_list_id;
+        //   $product->name;
+        //@endforeach
         $sale->products_list_id = 1;
         $sale->save();
         return $this->index();

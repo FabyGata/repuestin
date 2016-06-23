@@ -66,7 +66,7 @@
                             <div class="bg"><input type="text" class="input" name="description" ></div>
                         </div>
                         <button type="submit" class="button1">
-                            Añadir Producto
+                            Crear Producto
                         </button>
                     </div>
                 </form>

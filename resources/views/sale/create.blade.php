@@ -3,50 +3,72 @@
 
 @section('content')
 
-    <!-- Bootstrap Boilerplate... -->
+    <body id="page2">
 
-    <div class="panel-body">
-        <!-- Display Validation Errors -->
+    <div class="main">
+        <!--header -->
+        <header>
+            <div class="wrapper">
+                <h1><a href="/" id="logo">Repuestín</a></h1>
+                <h1 style="float: right;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Ingresar</a></li>
+                            <li><a href="{{ url('/register') }}">Registrarse</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-
-        <!-- New Task Form -->
-        <form action="{{ route('sale.store') }}" method="POST" class="form-horizontal">
-        {{ csrf_field() }}
-
-        <!-- Task Name -->
-            <div class="form-group">
-                <label for="client-name" class="col-sm-3 control-label">Nombre del Cliente</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="client_name" id="client-name" class="form-control">
-                </div>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Salir</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+                </h1>
             </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="{{ url('/') }}"><span>Inicio</span></a></li>
+                    <li><a href="{{ url('/product') }}"><span>Producto</span></a></li>
+                    <li><a href="{{ url('/car') }}"><span>Autos</span></a></li>
+                    <li><a href="{{ url('/repair') }}"><span>Reparaciones</span></a></li>
+                    <li class="active"><a href="{{ url('/sale') }}"><span>Ventas</span></a></li>
+                </ul>
+            </nav>
+        </header>
 
-            <div class="form-group">
-                <label for="client-nit" class="col-sm-3 control-label">Nit del Cliente</label>
+        <article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
+            <div class="wrapper">
+                <h2>Contact Form</h2>
+                <form id="ContactForm" action="{{ route('sale.store') }}" method="POST" class="form-horizontal">
+                    {{ csrf_field() }}
+                    <div>
+                        <div  class="wrapper">
+                            <span>Cliente:</span>
+                            <div class="bg"><input type="text" class="input" name="client_name"></div>
+                        </div>
+                        <div  class="wrapper">
+                            <span>Nit:</span>
+                            <div class="bg"><input type="text" class="input" name="client_nit" ></div>
+                        </div>
+                        <div  class="wrapper">
+                            <span>Precio:</span>
+                            <div class="bg"><input type="text" class="input" name="total_price" ></div>
+                        </div>
 
-                <div class="col-sm-6">
-                    <input type="text" name="client_nit" id="client-nit" class="form-control">
-                </div>
+                        <button type="submit" class="button1">
+                            Crear Venta
+                        </button>
+                    </div>
+                </form>
+
+
+
             </div>
+        </article>
 
-            <div class="form-group">
-                <label for="total_price" class="col-sm-3 control-label">Precio Total</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="total_price" id="total-price" class="form-control">
-                </div>
-            </div>
-            <!-- Add Task Button -->
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Añadir Venta
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- TODO: Current Tasks -->
 @endsection

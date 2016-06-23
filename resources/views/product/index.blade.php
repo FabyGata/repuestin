@@ -93,7 +93,7 @@
                         <div class="form-group">
                             <div class="col-sm-6">
                                 <a type="submit" class="button1" href="product/create">
-                                    Añadir Producto Nuevo
+                                    Crear Producto Nuevo
                                 </a>
                             </div>
                         </div>
