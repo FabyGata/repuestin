@@ -67,7 +67,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/sales') }}">Ventas</a></li>
+                    <li><a href="{{ url('/sale') }}">Ventas</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">

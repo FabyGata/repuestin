@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\Sale;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        //
+        return view('sale.index' , ['sales' => Sale::orderBy('created_at', 'desc')->get()]);
     }
 
     /**
@@ -25,7 +27,7 @@ class SalesController extends Controller
      */
     public function create()
     {
-        //
+        return view('sale.create');
     }
 
     /**
@@ -36,7 +38,13 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sale=new Sale();
+        $sale->client_name = $request->client_name;
+        $sale->client_nit = $request->client_nit;
+        $sale->total_price = $request->total_price;
+        $sale->products_list_id = 1;
+        $sale->save();
+        return $this->index();
     }
 
     /**

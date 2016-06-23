@@ -7,7 +7,14 @@
 
     <div class="panel-body">
         <!-- Display Validation Errors -->
-
+        <!-- user_id
+             car_id
+             products_list_id
+             client_name
+             client_nit
+             total_price
+             price
+        -->
 
         <!-- New Task Form -->
         <form action="{{ route('repair.store') }}" method="POST" class="form-horizontal">
@@ -15,10 +22,18 @@
 
         <!-- Task Name -->
             <div class="form-group">
-                <label for="car-name" class="col-sm-3 control-label">Nombre p</label>
+                <label for="client_name" class="col-sm-3 control-label">Nombre del Cliente</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="product-name" class="form-control">
+                    <input type="text" name="client_name" id="client-name" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="client_nit" class="col-sm-3 control-label">Nit del Cliente</label>
+
+                <div class="col-sm-6">
+                    <input type="text" name="client_nit" id="client-nit" class="form-control">
                 </div>
             </div>
 
@@ -26,23 +41,15 @@
                 <label for="price" class="col-sm-3 control-label">Precio</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="price" id="product-price" class="form-control">
+                    <input type="text" name="price" id="price" class="form-control">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="brand" class="col-sm-3 control-label">Marca</label>
+                <label for="total_price" class="col-sm-3 control-label">Precio Total</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="brand" id="product-brand" class="form-control">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="description" class="col-sm-3 control-label">Descripción</label>
-
-                <div class="col-sm-6">
-                    <input type="text" name="description" id="product-description" class="form-control">
+                    <input type="text" name="total_price" id="total-price" class="form-control">
                 </div>
             </div>
 
@@ -50,7 +57,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Añadir Producto
+                        <i class="fa fa-plus"></i> Añadir Servicio de Reparación
                     </button>
                 </div>
             </div>

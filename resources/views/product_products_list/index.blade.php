@@ -5,7 +5,7 @@
     @if (count($product_products_list) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-                Lista de Productos
+                Product Products List
             </div>
 
             <div class="panel-body">
